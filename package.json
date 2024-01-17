@@ -1,0 +1,57 @@
+{
+  "name": "@padcom/cypress-lib",
+  "version": "0.0.1",
+  "description": "Cypress library",
+  "author": "Matthias Hryniszak <padcom@gmail.com>",
+  "license": "Apache-2.0",
+  "keywords": [
+    "cypress"
+  ],
+  "type": "module",
+  "main": "./dist/cypress-lib.umd.cjs",
+  "module": "./dist/cypress-lib.js",
+  "types": "./dist/types.d.ts",
+  "exports": {
+    ".": {
+      "require": "./dist/cypress-lib.umd.cjs",
+      "import": "./dist/cypress-lib.js",
+      "types": "./dist/types.d.ts"
+    }
+  },
+  "files": [
+    "README.md",
+    "dist"
+  ],
+  "scripts": {
+    "dev": "vite build -w",
+    "build": "vite build",
+    "clean": "rimraf dist",
+    "prepublishOnly": "npm install && npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/padcom/cypress-pop"
+  },
+  "bugs": {
+    "url": "https://github.com/padcom/cypress-pop/issues"
+  },
+  "funding": {
+    "type": "patreon",
+    "url": "https://www.patreon.com/padcom"
+  },
+  "peerDependencies": {
+    "cypress": "^13.6.0",
+    "@padcom/cypress-pop": "^0.0.2"
+  },
+  "devDependencies": {
+    "@padcom/eslint-config-typescript": "^0.6.0",
+    "typescript": "~5.0.4",
+    "vite": "^5.0.2",
+    "vite-plugin-dts": "^3.6.4",
+    "vite-plugin-eslint": "^1.8.1",
+    "vitest": "^1.2.0"
+  },
+  "eslintConfig": {
+    "extends": "@padcom/eslint-config-typescript"
+  }
+}
